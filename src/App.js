@@ -14,7 +14,6 @@ class App extends Component{
     this.timer = debounce(3000, this.timer);
   }
   getData(){
-    console.log(this.state.count, "hjhj");
     fetch('https://hn.algolia.com/api/v1/search_by_date?tags=story&page='+this.state.count).
     then(response =>  response.json()).
     then(data => {
@@ -32,9 +31,7 @@ class App extends Component{
   componentDidUpdate(){
     this.timer()
   }
-  abc(){
-    console.log(this.state.count,"SFEFEWFE")
-  }
+  
   timer() {
     this.setState({ count: this.state.count + 1}, () => this.getData());
   }
@@ -43,7 +40,6 @@ class App extends Component{
   }
  
   render(){
-    console.log(this.state.count,"ssds")
      return(
      <div>
        <table  className="table table-striped">
