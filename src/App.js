@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {debounce} from 'throttle-debounce';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component{
   constructor(props){
@@ -46,7 +46,7 @@ class App extends Component{
     console.log(this.state.count,"ssds")
      return(
      <div>
-       <table>
+       <table  className="table table-striped">
          <thead>
          <tr>
            <th>Title</th>
