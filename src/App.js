@@ -36,12 +36,13 @@ class App extends Component{
     this.setState({ count: this.state.count + 1}, () => this.getData());
   }
   componentDidMount(){
-    this.setState({ count: this.state.count + 1}, () => this.getData());
+    this.timer()
   }
  
   render(){
      return(
-     <div>
+      <div>{this.state.respnseData.length > 0 ?
+        <div>
        <table  className="table table-striped">
          <thead>
          <tr>
@@ -51,10 +52,11 @@ class App extends Component{
            <th>Created At</th>
         </tr>
         </thead>
-        <tbody>{this.state.respnseData.length > 0 ? this.state.respnseData  : ""}</tbody>
+        <tbody> {this.state.respnseData}</tbody>
       </table>
-      {this.state.respnseData.length > 0 ? <p className="green">{this.state.count}</p> : ""}
+      <p className="green">{this.state.count}</p> 
     </div>
+    : <div><h2>No More Data</h2></div>}</div>
      )
     
   }
